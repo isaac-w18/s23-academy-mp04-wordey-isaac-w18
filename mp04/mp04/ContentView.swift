@@ -22,12 +22,14 @@ struct ContentView: View {
         NavigationStack {
             Form {
                 Section {
-                    TextField("Input word",
+                    TextField("Input text",
                               text: $input)
                 }
                 
                 Section {
                     TextDisplayView(input: $input, textColor: textColor, isBold: isBold, isItalics: isItalics, size: size, horizAlign: horizAlign, vertAlign: vertAlign)
+                } header: {
+                    Text("Formatted text")
                 }
                 
             }
@@ -69,6 +71,7 @@ struct TextDisplayView: View {
             .italic(isItalics)
             .foregroundColor(textColor)
             .font(.system(size: size))
+//            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: )
     }
 }
 

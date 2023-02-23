@@ -29,10 +29,10 @@ struct SettingsView: View {
                     Toggle("Bold", isOn: $isBold)
                     Toggle("Italics", isOn: $isItalics)
                     ColorPicker("Color", selection: $textColor)
-                    Slider(value: $size, in: 0...100, step: 1.0) {
+                    Slider(value: $size, in: 5...100, step: 1.0) {
                         Text("Font size")
                     } minimumValueLabel: {
-                        Text("0")
+                        Text("1")
                     } maximumValueLabel: {
                         Text("100")
                     }
@@ -40,7 +40,17 @@ struct SettingsView: View {
                 }
                 
                 Section(header: Text("Alignment")) {
-//                    Picker("Horizontal", selction: $horizAlign)
+                    Picker("Horizontal", selection: $horizAlign) {
+                        Text("Leading").tag("Leading")
+                        Text("Center").tag("Center")
+                        Text("Trailing").tag("Trailing")
+                    }
+                    
+                    Picker("Vertical", selection: $vertAlign) {
+                        Text("Top").tag("top")
+                        Text("Center").tag("center")
+                        Text("Bottom").tag("bottom")
+                    }
                 }
             }
         }
