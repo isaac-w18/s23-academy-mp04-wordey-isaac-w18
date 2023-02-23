@@ -32,6 +32,7 @@ struct ContentView: View {
                     Text("Formatted text")
                 }
                 
+                
             }
             .navigationBarTitle("Wordey")
             .toolbar {
@@ -64,14 +65,21 @@ struct TextDisplayView: View {
     let horizAlign: String
     let vertAlign: String
     
+    
+    
     var body: some View {
         
-        Text(input)
-            .bold(isBold)
-            .italic(isItalics)
-            .foregroundColor(textColor)
-            .font(.system(size: size))
-//            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: )
+        
+        VStack {
+            Text(input)
+                .bold(isBold)
+                .italic(isItalics)
+                .foregroundColor(textColor)
+                .font(.system(size: size))
+                .frame(maxWidth: .infinity, minHeight: 200,  alignment: Alignment(horizontal: horizAlign=="Leading" ? .leading: horizAlign=="Center" ? .center: .trailing,
+                        vertical: vertAlign=="Top" ? .top: vertAlign=="Center" ? .center: .bottom))
+                
+        }
     }
 }
 

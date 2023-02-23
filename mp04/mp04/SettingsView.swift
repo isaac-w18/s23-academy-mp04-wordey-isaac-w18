@@ -47,9 +47,9 @@ struct SettingsView: View {
                     }
                     
                     Picker("Vertical", selection: $vertAlign) {
-                        Text("Top").tag("top")
-                        Text("Center").tag("center")
-                        Text("Bottom").tag("bottom")
+                        Text("Top").tag("Top")
+                        Text("Center").tag("Center")
+                        Text("Bottom").tag("Bottom")
                     }
                 }
             }
